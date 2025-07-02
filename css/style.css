@@ -26,12 +26,12 @@ header {
     top: 0px;
 }
 
-   .banner-container {
+.banner-container {
        display: block;
        margin: 0 auto;
-       width: 800px;
+       width: 700px;
        height:min-content; /* Opcional: para responsividade */
-   }
+}
 
 
 .logo {
@@ -63,21 +63,45 @@ height: 180px;
 #campo-texto:focus {
   border-color: #004aad; /* Define a cor da borda quando o input está em foco. */
   box-shadow: 0 0 12px #004aad; /* Adiciona uma sombra suave para indicar que o input está selecionado. */
+  border-radius: 15px;
 }
 
-    button1 {
-    background-color: #4CAF50; /* Cor de fundo */
-    border: none; /* Remove a borda padrão */
-    color: white; /* Cor do texto */
-    padding: 20px 50px; /* Espaçamento interno */
-    text-align: center; /* Alinha o texto no centro */
-    text-decoration: none; /* Remove a decoração do texto */
-    display: inline-block; /* Permite que a estilização seja feita */
-    font-size: 16px;
-    cursor: pointer; /* Muda o cursor para indicar que é clicável */
-    border-radius: 20px; /* Define o raio do arredondamento */
-            }
-    button1:hover {
+.nemwItem {
+  border-color: #004aad; /* Define a cor da borda quando o input está em foco. */
+  box-shadow: 0 0 12px #004aad; /* Adiciona uma sombra suave para indicar que o input está selecionado. */
+  border-radius: 15px; /* Define o raio das bordas em pixels. Um valor maior resulta em bordas mais arredondadas. */
+  padding: 20px; /* Define o espaço interno do input, que ajuda a deixar    a caixa mais espaçosa. */
+
+}
+
+#marca {
+  border-radius: 8px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+input {
+  border-radius: 8px;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+button1 {
+background-color: #4CAF50; /* Cor de fundo */
+border: none; /* Remove a borda padrão */
+color: white; /* Cor do texto */
+padding: 20px 50px; /* Espaçamento interno */
+text-align: center; /* Alinha o texto no centro */
+text-decoration: none; /* Remove a decoração do texto */
+display: inline-block; /* Permite que a estilização seja feita */
+font-size: 16px;
+cursor: pointer; /* Muda o cursor para indicar que é clicável */
+border-radius: 20px; /* Define o raio do arredondamento */
+} 
+
+button1:hover {
         opacity: 0.9; /* Reduz a opacidade ao passar o mouse */
     }
 
@@ -98,7 +122,21 @@ height: 180px;
       opacity: 0.9; /* Reduz a opacidade ao passar o mouse */
     }
 
-
+     button3 {
+      background-color: #FFFF; /* Cor de fundo */
+      border: none; /* Remove a borda padrão */
+      color: rgb(10, 10, 10); /* Cor do texto */
+      padding: 20px 50px; /* Espaçamento interno */
+      text-align: center; /* Alinha o texto no centro */
+      text-decoration: none; /* Remove a decoração do texto */
+      display: inline-block; /* Permite que a estilização seja feita */
+      font-size: 16px;
+      cursor: pointer; /* Muda o cursor para indicar que é clicável */
+      border-radius: 20px; /* Define o raio do arredondamento */
+    }
+    button3:hover {
+      opacity: 0.7; /* Reduz a opacidade ao passar o mouse */
+    }
     
     #carros {
     border-collapse: separate;
@@ -118,46 +156,9 @@ th, td {
 }
 
 
-#carros tr td:first-child, 
-#carros tr th:first-child {
-  border-left: 1px solid #004aad;
-}
-
-
-#carros tr td:first-child, 
- tr th {
-  border-top: 0px solid #004aad;
-}
-
-
-#carros tr td:first-child, 
- tr:first-child th:first-child {
-  border-top-left-radius: 0.5rem;
-}
-
-
-#carros tr td:first-child, 
- tr:first-child th:last-child {
-  border-top-right-radius: 0.5rem;
-}
-
-#carros tr td:first-child, 
- tr:last-child td:first-child {
-  border-bottom-left-radius: 0.5rem;
-}
-
-
-#carros tr td:first-child, 
- tr:last-child td:last-child {
-  border-bottom-right-radius: 0.5rem;
-}
-
-
-
-
 .newItem {
     background-color:#004aad;
-    padding: 20px 20px;
+    padding: 10px 10px;
     color: #004aad;
     display: flex;
     justify-content:center;
@@ -174,36 +175,9 @@ th, td {
     border: 1px solid #004aad;
     width: 25%;
     padding: 10px;
-    font-size: 16px;
+    font-size: 10px;
 }
 
-#newQuantity {
-    margin: 0;
-    border: 1px solid #004aad;
-    width: 8%;
-    padding: 10px;
-    font-size: 16px;
-}
-
-#newPrice {
-    margin: 0;
-    border: 1px solid rgb(35, 32, 24);
-    width: 5%;
-    padding: 10px;
-    font-size: 16px;
-}
-
-
-.addBtn {
-    padding: 9px 10px;
-    background-color: rgb(35, 32, 24);
-    color: white;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s;
-    border-radius: 2px;
-}
 
 .addBtn:hover {
     background-color: #2ab53a;
@@ -211,10 +185,11 @@ th, td {
 }
 
 .items {
-    margin: 0;
+    margin: 1px;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: center;    
+    border: 3px solid #004aad;
 }
 
 .close:hover {
@@ -225,30 +200,38 @@ th, td {
 table,
 th,
 td {
-    border: 0px solid #004aad;
-    border-collapse: collapse;
+    border: 1px solid #FFFFFF;  
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
     cursor: pointer;
-    position:relative;
+    position: relative;
     padding: 2px 5px 10px 10px;
     font-size: 15px;
-    transition: 0.2s;
+    transition: 0.5s;
+    justify-content: center; 
     text-align: start;
     margin-top: auto;
+    overflow: hidden;
 }
 
 table{
-    background-color: #004aad;
+    background-color: white;
     width: 80%;
+     border-bottom-right-radius: 10px;
 }
 
 tr:nth-child(odd){
-    background-color: white;
+    background-color: #ffffff3d;
+     border-top-left-radius: 10px;
 }
 
 th:nth-child(1){
-    width: 80%;
+    width: 40%;
+    border-top-right-radius: 10px;
 }
 
 tr:hover {
     background: whitesmoke;
 }
+
