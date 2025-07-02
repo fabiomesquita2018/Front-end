@@ -27,6 +27,7 @@
    <section class="newItem">
   <label></label><br>
   <select id="marca" name="marca" title="Selecione a marca do carro">
+    <option value="">Selecione o modelo</option>
     <option value="CHEVROLET">CHEVROLET</option>
     <option value="FIAT">FIAT</option>
     <option value="FORD">FORD</option>
@@ -34,6 +35,9 @@
     <option value="JEEP">JEEP</option>
     <option value="RENAULT">RENAULT</option>
     <option value="HYUNDAI">HYUNDAI</option>
+    <option value="BYD">BYD</option>
+    <option value="TOYOTA">TOYOTA</option>
+    <option value="HONDA">HONDA</option>
   </select> 
   <input type="text" id="placa" placeholder="placa">
   <input type="date" id="data"placeholder= "Data de entrada">
@@ -42,7 +46,7 @@
 
   <button1 onclick="enviarCarro()">Salvar</button1>
   <button2 onclick="limparCampos()">Limpar</button2>
-  <button3 onclick="listarCarros()">Pesquisar</button3>
+  <button3 onclick="pesquisarCarros()">Pesquisar</button3>
 </section>
 
       <!-- Tabela com items -->

@@ -1,21 +1,39 @@
 const API_URL = 'http://localhost:5000/carros';
 
-/*
-  1. Listar todos os carros
-*/
-async function listarCarros() {
+
+ // 1. Listar todos os carros ou filtrar por marca, placa ou data
+
+async function pesquisarCarros() {
+  const marca = document.getElementById("marca").value.trim();
+  const placa = document.getElementById("placa").value.trim();
+  const data = document.getElementById("data").value;
+
+  const params = {};
+
+  if (marca) params.marca = marca;
+  if (placa) params.placa = placa;
+  if (data) {
+    params.entrada_de = data;
+    params.entrada_ate = data;
+  }
+
   try {
-    const res = await fetch('http://localhost:5000/carros');
+    const query = new URLSearchParams(params).toString();
+    const url = Object.keys(params).length > 0
+      ? `http://localhost:5000/carros/filtrar?${query}`
+      : `http://localhost:5000/carros`;
+
+    const res = await fetch(url);
     const carros = await res.json();
+
     renderizarCarros(carros);
   } catch (error) {
-    console.error('Erro ao listar carros:', error);
+    console.error("Erro ao buscar carros:", error);
   }
 }
 
-/*
-  2. Enviar novo carro
-*/
+ //3. inserir um  novo carro
+
 async function enviarCarro() {
   const marca = document.getElementById("marca").value;
   const placa = document.getElementById("placa").value;
@@ -60,12 +78,10 @@ async function enviarCarro() {
   } catch (err) {
     alert("❌ Erro ao adicionar carro: " + err.message);
   }
-  listarCarros();    // Atualiza a lista
+  pesquisarCarros();    // Atualiza a lista
 }
 
-/*
-  3. Deletar carro pelo ID
-*/
+  // 4. Deletar carro pelo ID
 
 async function deletarCarro() {
   const selecionados = document.querySelectorAll('.carro-checkbox:checked');
@@ -88,13 +104,11 @@ async function deletarCarro() {
     }
   }
 
-  listarCarros(); // Atualiza a lista após apagar
+  pesquisarCarros(); // Atualiza a lista após apagar
 }
 
+ // 5. Renderizar carros na lista
 
-/*
-  4. Renderizar carros na lista
-*/
 function renderizarCarros(carros) {
   const tbody = document.querySelector("#lista-carros tbody");
   tbody.innerHTML = ""; // limpa a tabela
@@ -118,24 +132,22 @@ function renderizarCarros(carros) {
         </button>
     `;
     document.addEventListener("DOMContentLoaded", () => {
-  listarCarros(); // ou qualquer função que chama renderizarCarros
+  pesquisarCarros(); 
 });
     tbody.appendChild(linha);
   });
 }
 
-/*
-  5. Limpa  formulário
-*/  
+ // 6. Limpa  formulário
+
 function limparCampos() {
   document.getElementById("marca").value = "";
   document.getElementById("placa").value = "";
   document.getElementById("data").value = "";
   document.getElementById("horaEntrada").value = "";
   document.getElementById("horaSaida").value = "";  
-  document.getElementById("lista-carros").innerHTML = ""; // Limpa a lista de carros   
-  
-  
+  document.querySelector("#lista-carros tbody").innerHTML = ""; 
+    
 }
 
 

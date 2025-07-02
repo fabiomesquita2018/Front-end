@@ -6,6 +6,7 @@ li {
     margin: 0;
     padding: 0;
     background-color:#004aad;
+     height:min-content; 
 }
 
 header {
@@ -14,6 +15,8 @@ header {
     color: #fda502;
     font-size:x-large; 
     width: 100%;
+     height:min-content; 
+    
 }
 
 .title {
@@ -30,30 +33,32 @@ header {
        display: block;
        margin: 0 auto;
        width: 700px;
-       height:min-content; /* Opcional: para responsividade */
+       height:min-content; 
 }
 
 
 .logo {
   float: left;
-  margin-top: 0px; /* Espaçamento para cima (opcional) */
-  margin-left: 0px; /* Espaçamento para a esquerda (opcional) */
-  width: 100px; /* Largura da logo */
-  height: auto; /* Altura ajusta automaticamente */
+  margin-top: 0px; 
+  margin-left: 0px; 
+  width: 100px; 
+  height: auto; 
   display: block;
+  height:min-content; 
 }
 
 .logo img{
 float: left;
 width: 180px;
 height: 180px;
+height:min-content; 
 }
 
 #campo-texto {
-  border-radius: 15px; /* Define o raio das bordas em pixels.  Um valor maior resulta em bordas mais arredondadas. */
-  padding: 20px; /* Define o espaço interno do input, que ajuda a deixar a caixa mais espaçosa. */
-  border: 1px solid #004aad; /* Define a borda do input, com cor e espessura.  O #ccc é uma cor cinza. */
-  outline: none; /* Remove o contorno (outline) que aparece quando o input é selecionado. */
+  border-radius: 15px; 
+  padding: 20px; 
+  border: 1px solid #004aad; 
+  outline: none; 
   float: left;
   margin-left: 0px; 
   margin-left: 0px;
@@ -61,16 +66,16 @@ height: 180px;
 
 /* Adicionar um estilo para quando o input estiver em foco */
 #campo-texto:focus {
-  border-color: #004aad; /* Define a cor da borda quando o input está em foco. */
-  box-shadow: 0 0 12px #004aad; /* Adiciona uma sombra suave para indicar que o input está selecionado. */
+  border-color: #004aad; 
+  box-shadow: 0 0 12px #004aad; 
   border-radius: 15px;
 }
 
 .nemwItem {
-  border-color: #004aad; /* Define a cor da borda quando o input está em foco. */
-  box-shadow: 0 0 12px #004aad; /* Adiciona uma sombra suave para indicar que o input está selecionado. */
-  border-radius: 15px; /* Define o raio das bordas em pixels. Um valor maior resulta em bordas mais arredondadas. */
-  padding: 20px; /* Define o espaço interno do input, que ajuda a deixar    a caixa mais espaçosa. */
+  border-color: #004aad; 
+  box-shadow: 0 0 12px #004aad; 
+  border-radius: 15px; 
+  padding: 20px; 
 
 }
 
